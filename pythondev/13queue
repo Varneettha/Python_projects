@@ -1,0 +1,74 @@
+# A queue is another fundamental data structure in computer science. Unlike stacks, queues follow the First In, First Out (FIFO) principle, 
+# meaning the first element added to the queue is the first one to be removed—like standing in line at a ticket counter!
+
+# Key Concepts
+# Enqueue: Adding an element to the end of the queue.
+
+# Dequeue: Removing an element from the front of the queue.
+
+# Peek/Front: Viewing the first element without removing it.
+
+# IsEmpty: Checking whether the queue is empty.
+
+# How a Queue Works
+# Imagine a queue as a line of people:
+
+# You enqueue (add) people to the back of the line.
+
+# You dequeue (remove) people from the front of the line.
+
+# For example:
+
+# Initial queue: A (front) -> B -> C -> D (rear)
+
+# After dequeuing: B (front) -> C -> D
+
+# After enqueuing E: B (front) -> C -> D -> E (rear)
+
+# Queue Implementation in Python
+# Using a List
+# While you can use Python lists to implement a queue, it’s not efficient because removing the first element (dequeue) involves shifting all other elements.
+
+
+queue = []
+
+# Enqueue elements
+queue.append('A')  # Add 'A' to the rear
+queue.append('B')
+queue.append('C')
+
+# Dequeue (remove) the front element
+print(queue.pop(0))  # Output: 'A'
+
+# View the queue
+print(queue)  # Output: ['B', 'C']
+
+from collections import deque
+
+queue = deque()
+
+# Enqueue elements
+queue.append('A')
+queue.append('B')
+queue.append('C')
+
+# Dequeue the front element
+print(queue.popleft())  # Output: 'A'
+
+# View the queue
+print(queue)  # Output: deque(['B', 'C'])
+
+from queue import Queue
+
+queue = Queue()
+
+# Enqueue elements
+queue.put('A')
+queue.put('B')
+queue.put('C')
+
+# Dequeue elements
+print(queue.get())  # Output: 'A'
+
+# Check if the queue is empty
+print(queue.empty())  # Output: False
